@@ -1,0 +1,23 @@
+{
+  "version"               :"1.1.0",
+  "name"                  :"mottenfrei",
+  "description"           :"CERES-Theme für mottenfrei.eu",
+  "namespace"             :"mottenfrei",
+  "author"                :"Heinz W. Warnemann",
+  "license"               :"AGPL-3.0",
+  "price"                 :"0.00",
+  "email"                 :"mail@warnemann.com",
+  "phone"                 :"+49 8035 9549490",
+  "keywords"              :["theme", "Ceres", "template"],
+  "type"                  :"theme",
+  "require"               :[],
+  "serviceProvider"       :"mottenfrei\\Providers\\mottenfreiServiceProvider",
+  "dataProviders"         :
+  [
+    {
+      "key":"mottenfrei\\Containers\\mottenfreiContainer",
+      "name":"Theme mottenfrei",
+      "description":"Theme-Container für den mottenfrei.eu"
+            }
+        ]
+}
