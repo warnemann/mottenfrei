@@ -1,0 +1,115 @@
+{% extends getPartial('page-design') %}
+
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% set showDefaultHomepage = config("Ceres.default.homepage") %}
+{% set companyLogo  = config("Ceres.header.company_logo") %}
+{% set companyName  = trans("Ceres::Template.headerCompanyName") %}
+
+{% block PartialHead %}
+    <meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
+    <meta name="robots" content="{{ config("Ceres.meta.robots_home") }}">
+
+    <meta property="og:title" content="{{ companyName }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+    <meta property="og:image"
+          content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Ceres') }}/{{ companyLogo }}{% endif %}"/>
+
+    <script type="application/ld+json">
+        {"@context": "http://schema.org","@type": "WebSite","url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}","potentialAction":{"@type": "SearchAction","target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}","query-input": "required name=search_term"}}
+    </script>
+
+<title>{{ companyName }}</title>
+
+{% endblock %}
+
+{% block PageBody %}
+
+<div class="home container-max">
+    <div class="row">
+        <div class="homepage-title m-b-1">
+            <h1>Neuerscheinungen | Herbst 2018</h1>
+            </div>
+        </div>
+    </div>
+
+<div class="container-max page-content">
+    <div class="row">
+        <div class="col-xs-4">
+            <p><a href="/meine-arschbombe-in-die-untiefen-des-lebens_5705289_1865"><img src="https://cdn02.plentymarkets.com/gwwi8nqc6v66/frontend/hawewemedia/cover_77_final_202_300.png" alt="Meine Arschbombe in die Untiefen des Lebens" title="Meine Arschbombe in die Untiefen des Lebens" class="img-fluid"></a></p>
+                
+            <div>
+            <h2>Meine Arschbombe in die Untiefen des Lebens</h2>
+            <h3>Comic-Tagebuch einer Krebserkrankung</h3>
+            <p><strong>Sabine Dinkel</strong></p>
+            </div>
+                <p><strong>24,95 EUR</strong><br>
+                ISBN 978-3-947815-77-7<br>
+                Paperback, Klappenbroschur, 196 Seiten, 14,5&nbsp;x&nbsp;21,5 cm<br>
+                1. Aufl. 2018<br>
+                Erscheinungsdatum: 10.10.2018<br><br>
+                    [ <a href="/meine-arschbombe-in-die-untiefen-des-lebens_5705289_1865">Weitere Informationen</a> ]</p>
+            </div>
+        
+        <div class="col-xs-4">
+                <p><a href="/ernteausfall_5705288_1864"><img src="https://cdn02.plentymarkets.com/gwwi8nqc6v66/frontend/hawewemedia/ernteausfall_cover_final_188_300.png" alt="Ernteausfall" title="Ernteausfall" class="img-fluid"></a></p>
+            <div>
+                    <h2>Ernteausfall</h2>
+            <h3>Verliebt. Vertraut. Verloren.</h3>
+            <p><strong>Andrea Ritter, Marion Schilcher</strong></p>
+            </div>
+            <p><strong>18,95 EUR</strong><br>
+                ISBN 978-3-947815-18-0<br>
+                Paperback, Klappenbroschur, 176 Seiten, 13,5&nbsp;x&nbsp;21,5 cm<br>
+                1. Aufl. 2018<br>
+                Erscheinungsdatum: 13.11.2018<br><br>
+                [ <a href="/ernteausfall_5705288_1864">Weitere Informationen</a> ]</p>
+            </div>
+        
+        <div class="col-xs-4">
+            <p><a href="/postkarte-din-a6-zack-gluecklich-10er-pack_5705298_1878"><img src="/images/gallery/hawewemedia/teaser-8005805.png" alt="Postkarte Zack, glücklich!" title="Postkarte Zack, glücklich!" class="img-fluid"></a></p>
+                
+            <div>
+            <h2>Postkarte DIN A6 "Zack, glücklich!"</h2>
+            <h3>10er-Pack</h3>
+            <p><strong>Illustration: Sabine Dinkel</strong></p>
+            </div>
+                <p><strong>9,95 EUR</strong><br>
+                    Grundpreis 0,99 EUR / Stück<br><br>
+                    [ <a href="/postkarte-din-a6-zack-gluecklich-10er-pack_5705298_1878">Weitere Informationen</a> ]</p>
+            </div>
+        
+        </div>
+    </div>
+
+<div class="container-max page-content">
+    <div class="row">
+        <div class="homepage-title m-b-1">
+            <h1>So liefern wir - Unsere Versandkosten:</h1>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <h2>Lieferungen innerhalb Deutschlands:</h2>
+            <ul>
+                <li>Kein Mindestbestellwert</li>
+                <li><strong>Buch dabei? Versandkostenfrei!</strong><br>
+                    Enthält Ihre Bestellung ein Buch, liefern wir generell versandkostenfrei.</li>
+                <li>EUR 3,95 Versandkosten</li>
+                <li>VERSANDKOSTENFREI ab EUR 20,00 Warenwert</li>
+                </ul>
+            </div>
+        <div class="col-xs-6">
+            <h2>Lieferungen nach Österreich:</h2>
+            <ul>
+                <li>Kein Mindestbestellwert</li>
+                <li>EUR 7,95 Versandkosten bis zu einem Warenwert von EUR 19,99</li>
+                <li>EUR 4,95 Versandkosten bis zu einem Warenwert von EUR 59,99</li>
+                <li>VERSANDKOSTENFREI ab EUR 60,00 Warenwert</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
